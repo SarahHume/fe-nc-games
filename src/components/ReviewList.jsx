@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
-import fetchReviews from "../utils/fetchData";
+import { Link } from "react-router-dom"
+import fetchReviews from "../utils/fetchReviews";
 
-function Reviews() {
+function ReviewList() {
     const [reviewList, setReviewList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -24,7 +25,7 @@ function Reviews() {
                     {reviewList.map((review) => {
                         return <li key={review.review_id}>
                             <>
-                            <h2>{review.title}</h2>
+                            <h2><Link to= {`/reviews/${review.review_id}`}>{review.title}</Link></h2>
                             <img src={review.review_img_url}/>
                             </>
                         </li>
@@ -35,4 +36,4 @@ function Reviews() {
     }
 }
 
-export default Reviews
+export default ReviewList

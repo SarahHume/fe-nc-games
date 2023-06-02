@@ -5,7 +5,8 @@ import Nav from './components/Nav';
 import Home from './components/Home';
 import Login from './components/Login';
 import Categories from './components/Categories';
-import Reviews from './components/Reviews';
+import ReviewList from './components/ReviewList';
+import Review from './components/Review';
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
       <Route path = "/" element = {<Home/>} />
       <Route path = "/login" element = {<Login/>}/>
       <Route path = "/categories" element = {<Categories/>}/>
-      <Route path = "/reviews" element = {<Reviews/>}/>
+      <Route path = "/reviews" element = {<ReviewList/>}/>
+      <Route path = "/reviews/:reviewId" element = {<Review/>}/>
     </Routes>
     </BrowserRouter>
   )
