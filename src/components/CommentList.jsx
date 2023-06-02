@@ -16,8 +16,10 @@ function CommentList(reviewId) {
         })
     }, [])
 
-    if (isLoading) {
+    if (isLoading === true) {
         return <p>Loading comments...</p>
+    } else if (comments.length === 0) {
+        return <p>No comments for this review</p>
     } else {
         return (
             <div>
