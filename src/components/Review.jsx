@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import getReview from "../utils/getReview"
+import CommentList from "./CommentList"
 
 function Review() {
     const [review, setReview] = useState({})
@@ -18,7 +19,7 @@ function Review() {
     }, [reviewId])
 
     if (isLoading === true) {
-        return <p>Loading...</p>
+        return <p>Loading review...</p>
     } else {
         return (
             <div>
@@ -27,6 +28,8 @@ function Review() {
                 <h3>Game by {review.designer}</h3>
                 <h4>Author: {review.owner}</h4>
                 <p>{review.review_body}</p>
+                <h3>Comments:</h3>
+                <CommentList reviewId={reviewId}/>
             </div>
         )
     }
