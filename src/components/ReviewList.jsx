@@ -17,7 +17,7 @@ function ReviewList() {
     }, [])
     
     if (isLoading === true) {
-        return <p>Loading...</p>
+        return <p>Loading reviews...</p>
     } else {
         return (
             <div>
